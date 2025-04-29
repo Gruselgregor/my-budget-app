@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Neue Einnahme hinzufügen</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Schließen</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Einnahmebezeichnung</ion-label>
+      <ion-input [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Betrag</ion-label>
+      <ion-input type="number" [(ngModel)]="amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Notiz</ion-label>
+      <ion-textarea [(ngModel)]="note"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveIncome()">Speichern</ion-button>
+</ion-content>

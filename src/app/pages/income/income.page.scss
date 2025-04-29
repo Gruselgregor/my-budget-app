@@ -1,0 +1,18 @@
+.add-button {
+    --background: transparent;
+    --color: white;
+    --border-radius: 50%;
+    --border-width: 2px;
+    --border-color: white;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-button ion-icon {
+    font-size: 32px;
+    color: white;
+  }

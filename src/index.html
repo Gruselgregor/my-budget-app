@@ -22,5 +22,8 @@
 <body>
   <app-root></app-root>
 </body>
-
+<script type="module">
+  import { defineCustomElements } from 'jeep-sqlite/loader';
+  defineCustomElements(window);
+</script>
 </html>

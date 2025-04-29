@@ -1,13 +1,25 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-title>Einnahmen</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Einkommen</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="add-button" (click)="openAddIncomeDialog()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <h2>Willkommen beim Haushaltsbuch3!</h2>
-  <p>Hier siehst du bald deine Übersicht für Einkommen.</p>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let income of incomes">
+      <ion-label>
+        <h2>{{ income.title }}</h2>
+        <p>{{ income.amount | currency:'EUR' }}</p>
+        <p *ngIf="income.note">{{ income.note }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
