@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  imports: [IonApp, IonRouterOutlet],
+  standalone: true,
+  imports: [IonicModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent {
-  constructor() {}
+  constructor(private router: Router) {}
+
+  navigate(path: string) {
+    this.router.navigate([path]);
+  }
 }

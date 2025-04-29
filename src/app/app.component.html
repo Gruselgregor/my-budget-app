@@ -1,3 +1,40 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Seitenmenü -->
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Haushaltsbuch</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines="none">
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="navigate('home')" routerDirection="root">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-button fill="clear">Startseite</ion-button>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="navigate('income')" routerDirection="root">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-button fill="clear">Einnahmen</ion-button>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="navigate('expenses')" routerDirection="root">
+            <ion-icon name="card-outline" slot="start"></ion-icon>
+            <ion-button fill="clear">Ausgaben</ion-button>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Hauptinhalt -->
+  <div class="ion-page" id="main-content">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
 </ion-app>
